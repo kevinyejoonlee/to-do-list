@@ -3,6 +3,7 @@ Created a to do list application. Using Express.js & embedded JS. Client and ser
 
 Install all dependencies 
 > npm install
+
 To run local port
 > nodemon index.js
 
