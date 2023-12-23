@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do list</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+
+</head>
+<body>
+    <div id="flex_container">
+        <div id="to_do_box">
+
+            <div id="date_box">
+                <p><%= new Date().toDateString()  %></p>
+            </div>
+
+            <form id="form_container" action="/submit" method="POST">
+                <input id="text" name="InputText" maxlength="41" autofocus>
+                <input type="submit" value="Enter">
+            </form>
+
+            <div id="items_container">
+
+              <% if (locals.ToDo){ %>
+  
+                    <% Object.keys(locals.ToDo).forEach(key => { %>
+                      <div id="<%= key%>Item" class="to_do_item <%if (Number(key) >= 7 && Object.keys(ToDo).length == 7) { %>
+                        last
+                     <% } %>">
+                        <div>
+                          
+                            <input id="checkbox<%= key%>" name="checkbox<%= key%>" type="checkbox" onChange="addStyle('<%= key%>')"> 
+
+                            <label id="label_check<%= key%>" for="item<%= key%>" > 
+                              <%= locals.ToDo[key] %>
+                            </label>
+                        </div>
+
+                        <form action="/delete" method="post">
+                          <input type="hidden" name="trash" value="<%= key%>">
+                          <input id="button" type="submit" value="🗑" >
+                       </form>
+                    </div>
+                    
+                    <% }) %>
+
+              <% } %>
+               
+
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+      function addStyle(number){
+        $("#label_check"+number).toggleClass("crossed_out");
+      }
+  
+  </script>
+    
+</body>
+</html>

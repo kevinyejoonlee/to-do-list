@@ -1,0 +1,127 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body {
+    background-color: rgb(136, 171, 142);
+}
+
+#flex_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+
+#to_do_box {
+    width: 400px;
+    height: 500px;
+    background-color: rgb(175, 200, 173);
+    border-radius: 40px;
+}
+
+
+/* FORM  --------------------------------------*/
+#form_container{
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#input_text {
+    width: 335px;
+    height: 30px;
+    border: none;
+
+}
+
+#form_container input[type=submit]{
+    background-color: rgb(242, 241, 235);
+    border: none;
+    padding: 8px 3px;
+    border-radius: 5px;
+    color:  rgb(136, 171, 142);
+}
+
+#form_container input[type=submit]:focus {
+    border: 3px solid #555;
+    
+  }
+
+#form_container input[type=submit]:hover {
+    background-color:  rgb(136, 171, 142);
+    color:  rgb(175, 200, 173) ;
+  }
+  
+
+/* Date Box--------------------------------*/
+
+#date_box {
+    width: 380px;
+    height: 70px;
+    background-color:rgb(238, 231, 218);
+    border-radius: 40px 40px 0px 0px;
+
+    position: relative;
+    top: 10px;
+    left: 10px;
+}
+
+#date_box > p {
+    line-height: 70px;
+    text-align: center;
+
+    font-size: 2rem;
+    color: rgb(136, 171, 142);
+
+}
+
+/* List --------------------------------*/
+#items_container{
+    width: 380px;
+    height: 360px;
+    margin-top: 10px;
+    background-color:rgb(242, 241, 235);
+    border-radius: 0px 0px 40px 40px;
+    position: relative;
+    left: 10px;
+    
+}
+
+#items_container .to_do_item{
+    width: 360px;
+    height: 50px;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    border-bottom: 2px solid rgb(175, 200, 173);
+}
+
+#items_container .to_do_item #button{
+    border: none;
+    margin-right: 20px;
+    
+}
+
+#items_container .to_do_item label{
+    padding: 10px;
+    font-size: 1rem;
+    color: rgb(136, 171, 142);
+
+    
+}
+
+/* style adding for word to be crossed out */
+.crossed_out{
+    text-decoration: line-through;
+}
+
+.last{
+    border-bottom: none !important;
+}
+
+
+/*  --------------------------------*/
