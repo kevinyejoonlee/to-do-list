@@ -2,7 +2,7 @@ import express from "express";
 import bodyParser from "body-parser";
 
 const app = express();
-const port = 3000;
+const port = 5000;
 
 const maxItems = 7;
 var count = 0;
@@ -35,9 +35,10 @@ app.post("/delete", (req, res) =>{
     res.status(303).redirect('/');
 });
 
+app.listen(process.env.PORT || port, () => console.log(`Listening on port ${port}`))
 
-app.listen(port, () => {
-    console.log(`http://localhost:3000/`);
-  });
+// app.listen(port, () => {
+//     console.log(`http://localhost:3000/`);
+//   });
   
 
